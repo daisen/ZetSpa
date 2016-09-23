@@ -13,7 +13,5 @@ public interface IPlugin {
 
     void after() throws Exception;
 
-    Object exePlugin(Object inParams) throws Exception;
-
-
+    Object execute(Object inParams) throws Exception;
 }

@@ -1,13 +1,13 @@
 /**
- * everything will be ok
+ * 登录信息
  *
- * @author : huangxianhui
+ * @author : hst
  * @Version :
- * @Date : 2016年6月3日 下午9:09:54
+ * @Date :
  */
 package zetspa.core.interfaces;
 
-import javax.servlet.http.HttpServletResponse;
+import java.util.Set;
 
 public interface ILogon {
 
@@ -15,56 +15,11 @@ public interface ILogon {
 
     String getToken();
 
-    void setLogon(IUser user,ICurState curState);
+    String get(String name);
 
-    IUser getUser();
+    void set(String name, String value);
 
-    ICurState getCurState();
+    Set<String> getProperties();
 
-    Boolean checkLogon(HttpServletResponse response);
-
-    String getProperty(String name);
-
-
-    //兼容IUser
-    String getUserId();
-
-    String getUserCode();
-
-    String getUserName();
-
-    String getOrgId();
-
-    String getUserType();
-
-    String getOrgCode();
-
-    String getOrgName();
-
-    String getOrgSort();
-
-    String getPassword();
-
-    String getRightCtrlOrgCode();
-
-    String getIsDeveloper();
-
-    //ICurState
-
-    String getLangId();
-
-    Long getLastTime();
-
-    String getLogonId();
-
-    String getComputName();
-
-    String getIpAddr();
-
-    String getBizDate();
-
-
-
-
-
+    ILocale getLocale();
 }

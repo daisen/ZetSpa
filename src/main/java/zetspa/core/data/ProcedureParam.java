@@ -1,6 +1,6 @@
 package zetspa.core.data;
 
-public class StoreProcParam {
+public class ProcedureParam {
 
     private String paramName;
     private DataType paramDataType;
@@ -8,7 +8,7 @@ public class StoreProcParam {
     private ProcParamType paramIoType;
     private Object value;
 
-    public StoreProcParam(String name, DataType dataType, int size, ProcParamType ioType, Object vaule) {
+    public ProcedureParam(String name, DataType dataType, int size, ProcParamType ioType, Object vaule) {
         setParamName(name);
         setParamDataType(dataType);
         setParamSize(size);
@@ -20,7 +20,7 @@ public class StoreProcParam {
         return paramName;
     }
 
-    public StoreProcParam setParamName(String paramName) {
+    public ProcedureParam setParamName(String paramName) {
         this.paramName = paramName;
         return this;
     }
@@ -29,7 +29,7 @@ public class StoreProcParam {
         return paramDataType;
     }
 
-    public StoreProcParam setParamDataType(DataType paramDataType) {
+    public ProcedureParam setParamDataType(DataType paramDataType) {
         this.paramDataType = paramDataType;
         return this;
     }
@@ -38,7 +38,7 @@ public class StoreProcParam {
         return paramSize;
     }
 
-    public StoreProcParam setParamSize(int paramSize) {
+    public ProcedureParam setParamSize(int paramSize) {
         this.paramSize = paramSize;
         return this;
     }
@@ -47,7 +47,7 @@ public class StoreProcParam {
         return paramIoType;
     }
 
-    public StoreProcParam setParamIoType(ProcParamType paramIoType) {
+    public ProcedureParam setParamIoType(ProcParamType paramIoType) {
         this.paramIoType = paramIoType;
         return this;
     }
@@ -56,7 +56,7 @@ public class StoreProcParam {
         return value;
     }
 
-    public StoreProcParam setValue(Object value) {
+    public ProcedureParam setValue(Object value) {
         this.value = value;
         return this;
     }

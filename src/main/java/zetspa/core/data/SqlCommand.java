@@ -25,6 +25,7 @@ public class SqlCommand {
     private Integer pageIndex = -1;
     private Integer totalRows = -1;
     private Integer objIndex = 0;
+    private final ArrayList<ProcedureParam> storeProcParams = new ArrayList<>();
 
     public SqlCommand(String sql) {
         this.sql = sql;
@@ -230,5 +231,14 @@ public class SqlCommand {
 
     public void setConnection(Connection connection) {
         this.connection = connection;
+    }
+
+    public ArrayList<ProcedureParam> getStoreProcParams() {
+        return storeProcParams;
+    }
+
+    public SqlCommand addStoreProcParam(ProcedureParam p) {
+        storeProcParams.add(p);
+        return this;
     }
 }
