@@ -16,24 +16,23 @@ import java.util.regex.Pattern;
  */
 public class SqlCommand {
 
-    private String sql;
-    private Connection connection;
+    //catch  ":xx"
+    private static Pattern patterns = Pattern.compile(":([_A-Za-z0-9]+)");
     private final ArrayList<Map> objMaps = new ArrayList<>();
     private final StringBuffer where = new StringBuffer();
     private final ArrayList<String> orderList = new ArrayList<>();
+    private final ArrayList<ProcedureParam> storeProcParams = new ArrayList<>();
+    private String sql;
+    private Connection connection;
     private Integer pageSize = -1;
     private Integer pageIndex = -1;
     private Integer totalRows = -1;
     private Integer objIndex = 0;
-    private final ArrayList<ProcedureParam> storeProcParams = new ArrayList<>();
 
     public SqlCommand(String sql) {
         this.sql = sql;
         init();
     }
-
-    //catch  ":xx"
-    private static Pattern patterns = Pattern.compile(":([_A-Za-z0-9]+)");
 
     public SqlCommand() {
         init();

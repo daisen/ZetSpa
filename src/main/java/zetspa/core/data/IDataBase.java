@@ -9,14 +9,22 @@ import java.sql.SQLException;
  */
 public interface IDataBase {
     Connection getConnection();
-    void closeConnection(Connection conn);
+
+    void closeConnection(Connection conn) throws SQLException;
 
     DataSet queryEx(SqlCommand cmd) throws Exception;
-    RowSet query(SqlCommand cmd) throws SQLException, Exception;
+
+    RowSet query(SqlCommand cmd) throws Exception;
 
     Boolean executeCommand(SqlCommand cmd);
 
-    DataSet queryProcedureEx(SqlCommand cmd);
-    RowSet queryProcedure(SqlCommand cmd);
-    void executeProcedure(SqlCommand cmd);
+    DataSet queryProcedureEx(SqlCommand cmd) throws SQLException;
+
+    RowSet queryProcedure(SqlCommand cmd) throws SQLException;
+
+    void executeProcedure(SqlCommand cmd) throws SQLException;
+
+    Object executeFunction(SqlCommand cmd) throws SQLException;
+
+    int getSqlType(DataType dataType);
 }

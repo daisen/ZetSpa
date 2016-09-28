@@ -16,13 +16,13 @@ public class LogonImpl implements ILogon {
     private ILocale locale;
 
     @Override
-    public void setToken(String token) {
-
+    public String getToken() {
+        return null;
     }
 
     @Override
-    public String getToken() {
-        return null;
+    public void setToken(String token) {
+
     }
 
     @Override

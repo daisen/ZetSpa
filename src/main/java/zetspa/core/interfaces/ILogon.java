@@ -11,9 +11,9 @@ import java.util.Set;
 
 public interface ILogon {
 
-    void setToken(String token);
-
     String getToken();
+
+    void setToken(String token);
 
     String get(String name);
 
