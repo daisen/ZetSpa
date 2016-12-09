@@ -1,5 +1,6 @@
 package zetspa.core.impl;
 
+import org.springframework.stereotype.Component;
 import zetspa.core.interfaces.ILocale;
 import zetspa.core.interfaces.ILogon;
 
@@ -10,10 +11,12 @@ import java.util.Set;
 /**
  * Created by huangshengtao on 2016-9-22.
  */
+@Component("logOn")
 public class LogonImpl implements ILogon {
 
     private Map<String, String> logon = new HashMap<>();
-    private ILocale locale;
+    private ILocale locale ;
+    private Object lock = new Object();
 
     @Override
     public String getToken() {
@@ -46,7 +49,7 @@ public class LogonImpl implements ILogon {
     @Override
     public ILocale getLocale() {
         if (locale == null) {
-            synchronized (locale) {
+            synchronized (lock) {
                 locale = new LocaleImpl();
             }
         }

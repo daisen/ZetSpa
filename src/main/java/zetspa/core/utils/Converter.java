@@ -148,7 +148,7 @@ public class Converter {
         }
 
         if (o instanceof Date) {
-            if (formats != null) {
+            if (formats != null && formats.length > 0) {
                 return parseDate((Date) o, formats[0]);
             }
             return parseDateTime((Date) o);
@@ -180,7 +180,8 @@ public class Converter {
         }
 
         if (StringUtils.isEmpty(format)) {
-            format = Global.getLogon().getLocale() != null ? Global.getLogon().getLocale().getDateTimeFormat() : "yyyy-MM-dd HH:mm:ss";
+            format = Global.getLogon() != null && Global.getLogon().getLocale() != null ? Global.getLogon().getLocale()
+                    .getDateTimeFormat() : "yyyy-MM-dd HH:mm:ss";
         }
 
         SimpleDateFormat sdf = new SimpleDateFormat(format);

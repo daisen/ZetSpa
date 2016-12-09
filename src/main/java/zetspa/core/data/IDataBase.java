@@ -8,7 +8,7 @@ import java.sql.SQLException;
  * Created by huangshengtao on 2016-9-23.
  */
 public interface IDataBase {
-    Connection getConnection();
+    Connection getConnection() throws SQLException;
 
     void closeConnection(Connection conn) throws SQLException;
 

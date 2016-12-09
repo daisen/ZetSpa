@@ -1,5 +1,6 @@
 package zetspa.core.data;
 
+import org.slf4j.LoggerFactory;
 import zetspa.core.utils.Converter;
 
 import javax.sql.RowSet;
@@ -7,11 +8,14 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.logging.Logger;
 
 /**
  * Created by huangshengtao on 2016-9-23.
  */
 public class DataSet extends ArrayList<HashMap<String, String>> {
+
+
 
     public DataSet() {
 
@@ -69,6 +73,7 @@ public class DataSet extends ArrayList<HashMap<String, String>> {
             }
             return rs.getObject(fieldName).toString();
         } catch (Exception ex) {
+            ex.printStackTrace();
             return null;
         }
     }
