@@ -8,18 +8,18 @@ import zetspa.core.interfaces.ILocale;
 public class LocaleImpl implements ILocale {
 
     @Override
-    public String getValue(String key) {
-        return null;
+    public String getString(String key) {
+        return key;
     }
 
     @Override
-    public String getValue(String key, String langId) {
-        return null;
+    public String getString(String key, String langId) {
+        return key;
     }
 
     @Override
-    public String getValue(String key, String langId, String defValue) {
-        return null;
+    public String getString(String key, String langId, String defValue) {
+        return key;
     }
 
     @Override

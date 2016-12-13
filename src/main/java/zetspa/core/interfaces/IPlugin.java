@@ -11,7 +11,7 @@ public interface IPlugin {
 
     void before() throws Exception;
 
-    void after() throws Exception;
+    void after(boolean pass) throws Exception;
 
     Object execute(Object inParams) throws Exception;
 }

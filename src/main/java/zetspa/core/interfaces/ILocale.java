@@ -9,11 +9,11 @@ package zetspa.core.interfaces;
 
 public interface ILocale {
 
-    String getValue(String key);
+    String getString(String key);
 
-    String getValue(String key, String langId);
+    String getString(String key, String langId);
 
-    String getValue(String key, String langId, String defValue);
+    String getString(String key, String langId, String defValue);
 
     String getDateTimeFormat();
 
